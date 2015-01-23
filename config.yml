@@ -1,6 +1,6 @@
-server: mccs.stu.marist.edu
-channels: ["#chat", "#mber"]
-nick: mccs-bot
-realname: MCCS Bot
+server: irc.freenode.net
+channels: ["#thomasmtgtherapy"]
+nick: MTG-Bot
+realname: MTG Bot
 prefix: ^\?
-plugins: [Hello, Wat, DiceRoll, Ligaf, Plus, Spoonerize, Learn, Summon, Join, Slap, Nope]
+plugins: [Hello, Wat, DiceRoll, Ligaf, Spoonerize, Summon, Join, Slap, Nope, MTG]
