@@ -29,10 +29,23 @@ class MTG
 
   match(/card (.+)/)
   def execute(m, target)
-    puts aetherize(titleCase(target))
     card = @@cards[aetherize(titleCase(target))]
     link = URI::encode("http://mtgimage.com/card/"+card["imageName"]+".jpg")
     m.reply link
+  end
+
+  match(/card_text (.+)/, method: :text)
+  def text(m, target)
+    card = @@cards[aetherize(titleCase(target))]
+    pandt = " "
+    if(card["types"].include?("Creature"))
+      pandt = card["power"] + "/" + card["toughness"]
+    end
+    loyalty = " "
+    if(card["types"].include?("Planeswalker"))
+      loyalty = card["loyalty"].to_s
+    end
+    m.reply card["name"] + " " + card["manaCost"] + " " + card["text"] + " " + pandt + loyalty
   end
 
 end
