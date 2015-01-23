@@ -4,6 +4,8 @@ require 'uri'
 
 class MTG
   include Cinch::Plugin
+  @@file = File.read("cards.json");
+  @@cards = JSON.parse(@@file);
 
   def titleCase(s)
     title = s.split
@@ -17,9 +19,7 @@ class MTG
 
   match(/card (.+)/)
   def execute(m, target)
-    file = File.read("cards.json");
-    cards = JSON.parse(file);
-    card = cards[titleCase(target)]
+    card = @@cards[titleCase(target)]
     link = URI::encode("http://mtgimage.com/card/"+card["imageName"]+".jpg")
     m.reply link
   end
