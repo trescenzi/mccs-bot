@@ -45,7 +45,7 @@ class MTG
     if(card["types"].include?("Planeswalker"))
       loyalty = card["loyalty"].to_s
     end
-    m.reply card["name"] + " " + card["manaCost"] + " " + card["text"] + " " + pandt + loyalty
+    m.reply card["name"] + " " + card["manaCost"] + " " + card["type"] + " " + card["text"] + " " + pandt + loyalty
   end
 
 end

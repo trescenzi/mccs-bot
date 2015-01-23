@@ -3,4 +3,4 @@ channels: ["#thomasmtgtherapy", "#cgf"]
 nick: MTG-Bot
 realname: MTG Bot
 prefix: ^\?
-plugins: [Hello, Wat, DiceRoll, Ligaf, Spoonerize, Summon, Join, Slap, Nope, MTG]
+plugins: [Hello, Wat, DiceRoll, Ligaf, Spoonerize, Summon, Join, Slap, Nope, MTG, Plus]
